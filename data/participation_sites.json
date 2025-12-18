@@ -1,0 +1,57 @@
+[
+  {
+    "title": "Extra Credit Website: Blue Team Special Participation D",
+    "letter": "D",
+    "team": "Blue",
+    "website": "https://cs-182-ec.vercel.app/",
+    "post_url": "https://edstem.org/us/courses/84647/discussion/7472857",
+    "authors": [
+      "Bruno Vieira"
+    ],
+    "created_at": "2025-12-16T14:35:23.993003+11:00"
+  },
+  {
+    "title": "Extra Credit Website: Red Team, Special Participation A",
+    "letter": "A",
+    "team": "Red",
+    "website": "https://reateam2.vercel.app/",
+    "post_url": "https://edstem.org/us/courses/84647/discussion/7468795",
+    "authors": [
+      "Justin Li"
+    ],
+    "created_at": "2025-12-15T11:53:58.533624+11:00"
+  },
+  {
+    "title": "Extra Credit Website: Special Participation A, Red Team",
+    "letter": "A",
+    "team": "Red",
+    "website": "https://eecs182-ec-a-red.netlify.app/",
+    "post_url": "https://edstem.org/us/courses/84647/discussion/7475857",
+    "authors": [
+      "Jason Trinh"
+    ],
+    "created_at": "2025-12-17T16:45:59.757075+11:00"
+  },
+  {
+    "title": "Extra Credit Website: B Team 2 (Vibe Coding)",
+    "letter": "B",
+    "team": "Red",
+    "website": "https://github.com/ElShroomster/182-extra-credit",
+    "post_url": "https://edstem.org/us/courses/84647/discussion/7473120",
+    "authors": [
+      "Sriram Srivatsan"
+    ],
+    "created_at": "2025-12-16T16:17:36.77116+11:00"
+  },
+  {
+    "title": "Extra Credit Website: Blue Team, Special Participation E",
+    "letter": "E",
+    "team": "Blue",
+    "website": "https://participation-e--devanperkash.replit.app/",
+    "post_url": "https://edstem.org/us/courses/84647/discussion/7475430",
+    "authors": [
+      "Devan Perkash"
+    ],
+    "created_at": "2025-12-17T13:31:04.180453+11:00"
+  }
+]
