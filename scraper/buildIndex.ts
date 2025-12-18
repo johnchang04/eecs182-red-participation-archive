@@ -7,7 +7,7 @@ import { fetchThreads, fetchThreadDetail } from "./fetchEd";
 function detectLetter(text: string): "A" | "B" | "C" | "D" | "E" | null {
   const t = text.toLowerCase();
 
-  // Canonical form
+  // Canonical phrasing
   if (t.includes("special participation a")) return "A";
   if (t.includes("special participation b")) return "B";
   if (t.includes("special participation c")) return "C";
@@ -25,12 +25,24 @@ function detectLetter(text: string): "A" | "B" | "C" | "D" | "E" | null {
 }
 
 /**
- * Detect team color.
+ * Detect team.
+ * Red = vibe coding (control group).
+ * Blue = manual coding.
  */
 function detectTeam(text: string): "Red" | "Blue" | "Unknown" {
   const t = text.toLowerCase();
-  if (t.includes("red team") || t.includes("vibe coding")) return "Red";
+
+  // Red team indicators
+  if (
+    t.includes("red team") ||
+    t.includes("vibe coding") ||
+    t.includes("b team") // B Team = vibe coding control
+  ) {
+    return "Red";
+  }
+
   if (t.includes("blue team")) return "Blue";
+
   return "Unknown";
 }
 
@@ -63,6 +75,7 @@ export async function buildIndex() {
     const titleRaw = t.title ?? "";
     const titleLower = titleRaw.toLowerCase();
 
+    // Only EC website announcement threads
     if (!isExtraCreditWebsiteTitle(titleRaw)) continue;
 
     const letter = detectLetter(titleLower);
@@ -71,7 +84,7 @@ export async function buildIndex() {
     // Fetch full thread detail
     const detail = (await fetchThreadDetail(t.id)) as any;
 
-    // 🔑 WEBSITE LIVES HERE
+    // Main thread body (where the website link actually lives)
     const threadText =
       detail?.thread?.document?.text ??
       detail?.thread?.document?.html ??
@@ -82,11 +95,15 @@ export async function buildIndex() {
     if (!website) continue;
 
     const combinedText = `${titleRaw}\n${threadText}`;
+    const team = detectTeam(combinedText);
+
+    // 🔴 Only keep Red / vibe-coding teams
+    if (team !== "Red") continue;
 
     sites.push({
       title: t.title,
       letter,
-      team: detectTeam(combinedText),
+      team,
       website,
       post_url: `https://edstem.org/us/courses/${process.env.ED_COURSE_ID}/discussion/${t.id}`,
       authors: [t.user?.name ?? "Unknown"],
@@ -99,5 +116,5 @@ export async function buildIndex() {
     JSON.stringify(sites, null, 2)
   );
 
-  console.log(`Saved ${sites.length} participation websites.`);
+  console.log(`Saved ${sites.length} RED TEAM participation websites.`);
 }
