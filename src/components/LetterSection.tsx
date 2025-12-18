@@ -1,5 +1,6 @@
 import { ParticipationSite } from "@/lib/loadParticipation";
-import { TeamLink } from "./TeamLink";
+import { SectionHeader } from "./SectionHeader";
+import { TeamCard } from "./TeamCard";
 
 export function LetterSection({
   letter,
@@ -9,20 +10,22 @@ export function LetterSection({
   sites: ParticipationSite[];
 }) {
   return (
-    <section className="space-y-3">
-      <h2 className="text-xl font-semibold">
-        Special Participation {letter}
-      </h2>
+    <section className="space-y-4">
+      <SectionHeader
+        title={`Special Participation ${letter}`}
+        count={sites.length}
+      />
 
-      {sites.length === 0 ? (
-        <p className="text-gray-500">No teams submitted.</p>
-      ) : (
-        <ul className="space-y-2">
-          {sites.map((site) => (
-            <TeamLink key={site.post_url} site={site} />
-          ))}
-        </ul>
-      )}
+      <div className="grid gap-3">
+        {sites.map((site) => (
+          <TeamCard
+            key={site.post_url}
+            letter={letter}
+            title={site.title}
+            website={site.website}
+          />
+        ))}
+      </div>
     </section>
   );
 }
