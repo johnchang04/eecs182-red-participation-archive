@@ -1,5 +1,16 @@
 [
   {
+    "title": "Extra Credit Special Participation D: Red Team 4",
+    "letter": "D",
+    "team": "Red",
+    "website": "https://aldurrah.github.io/muon-submissions-site/",
+    "post_url": "https://edstem.org/us/courses/84647/discussion/7476064",
+    "authors": [
+      "Abdelaziz Mohamed"
+    ],
+    "created_at": "2025-12-17T20:18:25.824491+11:00"
+  },
+  {
     "title": "Extra Credit Website: Red Team, Special Participation A",
     "letter": "A",
     "team": "Red",
@@ -31,5 +42,27 @@
       "Sriram Srivatsan"
     ],
     "created_at": "2025-12-16T16:17:36.77116+11:00"
+  },
+  {
+    "title": "Extra Credit Website, Special Participation D, Red Team",
+    "letter": "D",
+    "team": "Red",
+    "website": "https://cs182-special-participation-d-red-team1.vercel.app/",
+    "post_url": "https://edstem.org/us/courses/84647/discussion/7479079",
+    "authors": [
+      "Alex Luu"
+    ],
+    "created_at": "2025-12-19T08:33:01.009359+11:00"
+  },
+  {
+    "title": "Extra Credit Website: Red Team 5, Special Participation E",
+    "letter": "E",
+    "team": "Red",
+    "website": "https://182-red-e.vercel.app/",
+    "post_url": "https://edstem.org/us/courses/84647/discussion/7478868",
+    "authors": [
+      "Leon Kornfeld"
+    ],
+    "created_at": "2025-12-19T06:55:33.754658+11:00"
   }
 ]
