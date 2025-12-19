@@ -17,14 +17,20 @@ export function LetterSection({
       />
 
       <div className="grid gap-3">
-        {sites.map((site) => (
+        {sites.length === 0 ? (
+          <p className="text-sm text-zinc-500 dark:text-zinc-400">
+            No teams submitted.
+          </p>
+        ) : (
+        sites.map((site) => (
           <TeamCard
             key={site.post_url}
             letter={letter}
             title={site.title}
             website={site.website}
+            //postUrl={site.post_url}
           />
-        ))}
+        )))}
       </div>
     </section>
   );
